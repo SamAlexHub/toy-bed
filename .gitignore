@@ -1,0 +1,46 @@
+# Python
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+
+# Virtual Environment
+venv/
+env/
+.virtualenv/
+.venv/
+
+# Dependency files
+pip-log.txt
+pip-delete-this-directory.txt
+poetry.lock
+
+# Byte-compiled / cache files
+*.log
+*.sqlite3
+*.db
+*.sqlite
+*.sql
+
+# Environment variables and secret files
+.env
+.env.local
+.env.*.backup
+*.secrets
+
+# Editor & OS-specific files
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Mypy & Pytest cache
+.mypy_cache/
+.pytest_cache/
+.coverage
+.tox/
+
+# FastAPI specific
+instance/
+logs/
