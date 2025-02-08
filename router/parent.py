@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends, HTTPException
+from fastapi import APIRouter, Depends, HTTPException,status
 from sqlalchemy.orm import Session
 import random
 from database.database import SessionLocal
@@ -18,7 +18,7 @@ def get_db():
 def register_parent(parent: ParentCreate, db: Session = Depends(get_db)):
     existing_parent = db.query(Parent).filter(Parent.mobile == parent.mobile).first()
     if existing_parent:
-        raise HTTPException(status_code=400, detail="Mobile number already registered")
+        raise HTTPException(status.HTTP_400_BAD_REQUEST, detail="Mobile number already registered")
     
     new_parent = Parent(name=parent.name, mobile=parent.mobile)
     db.add(new_parent)
